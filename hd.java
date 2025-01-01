@@ -3,35 +3,38 @@ extract each digit and build the reversed number.
 
   class Main {
   public static void main(String[] args) {
-    
     int num = 1234567, reversed = 0;
-
     for(;num != 0; num /= 10) {
       int digit = num % 10;
       reversed = reversed * 10 + digit;
     }
-
     System.out.println("Reversed Number: " + reversed);
   }
 }
 
+
 2.Create a method that checks if a given String is a palindrome (reads the same
 forwards and backwards).
 
-
-public class PalindromeChecker {
-    public static boolean isPalindrome(String str) {
-        if (str == null) {
-            return false;
+  
+import java.io.*;
+public class Palindrome {
+    public static boolean isPalindrome(String s) {
+        s = s.toLowerCase();
+        String rev = "";
+        for (int i = s.length() - 1; i >= 0; i--) {
+            rev = rev + s.charAt(i);
         }
-        String cleanStr = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
-        String reversedStr = new StringBuilder(cleanStr).reverse().toString();
-        return cleanStr.equals(reversedStr);
+        return s.equals(rev);
     }
     public static void main(String[] args) {
-        System.out.println(isPalindrome("A man, a plan, a canal: Panama")); 
-        System.out.println(isPalindrome("racecar")); 
-        System.out.println(isPalindrome("hello")); 
+        String s = "level";
+        boolean res = isPalindrome(s);
+        if (res) {
+            System.out.println("\"" + s + "\" is a palindrome.");
+        } else {
+            System.out.println("\"" + s + "\" is not a palindrome.");
+        }
     }
 }
 
