@@ -24,53 +24,38 @@ public class PalindromeChecker {
         if (str == null) {
             return false;
         }
-        
         String cleanStr = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
         String reversedStr = new StringBuilder(cleanStr).reverse().toString();
-        
         return cleanStr.equals(reversedStr);
     }
-    
     public static void main(String[] args) {
-        System.out.println(isPalindrome("A man, a plan, a canal: Panama")); // true
-        System.out.println(isPalindrome("racecar")); // true
-        System.out.println(isPalindrome("hello")); // false
+        System.out.println(isPalindrome("A man, a plan, a canal: Panama")); 
+        System.out.println(isPalindrome("racecar")); 
+        System.out.println(isPalindrome("hello")); 
     }
 }
+
 
 3. Write a program that counts the number of vowels and consonants in a given String.
 
-public class StringAnalyzer {
-    public static void countVowelsAndConsonants(String str) {
-        if (str == null) {
-            System.out.println("The input string is empty.");
-            return;
-        }
-        
-        int vowels = 0;
-        int consonants = 0;
-        
-        str = str.toLowerCase();
-        
-        for (char ch : str.toCharArray()) {
-            if (ch >= 'a' && ch <= 'z') {
-                if ("aeiou".indexOf(ch) != -1) {
-                    vowels++;
-                } else {
-                    consonants++;
-                }
-            }
-        }
-        
-        System.out.println("Vowels: " + vowels);
-        System.out.println("Consonants: " + consonants);
-    }
-    
-    public static void main(String[] args) {
-        countVowelsAndConsonants("Hello World!");
-        countVowelsAndConsonants("Java Programming");
-    }
-}
+public class CountVowelConsonant {    
+    public static void main(String[] args) {    
+        int vCount = 0, cCount = 0;    
+        String str = "This is a really simple sentence";     
+        str = str.toLowerCase();    
+        for(int i = 0; i < str.length(); i++) {    
+            if(str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u') {    
+                vCount++;    
+            }    
+            else if(str.charAt(i) >= 'a' && str.charAt(i)<='z') {      
+                cCount++;    
+            }    
+        }    
+        System.out.println("Number of vowels: " + vCount);    
+        System.out.println("Number of consonants: " + cCount);    
+    }    
+}   
+
 
 4. Implement a method that capitalizes the first letter of each word in a given String.
 
