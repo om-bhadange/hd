@@ -91,8 +91,7 @@ class Main {
 
 
 
-
-
+5. Write a program that checks if a given number is even or odd (from original list).
 
 import java.io.*;
 import java.util.Scanner;
